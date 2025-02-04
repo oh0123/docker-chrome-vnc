@@ -25,7 +25,8 @@ RUN cd /tmp && \
 
 COPY entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
+RUN sed -i -e 's/\r$//' entrypoint.sh
 
-ENTRYPOINT ["/bin/bash", "-c", "./entrypoint.sh"]
 EXPOSE $DEBUG_PORT $VNC_PORT
 
+ENTRYPOINT ["/bin/bash", "-c", "./entrypoint.sh"]

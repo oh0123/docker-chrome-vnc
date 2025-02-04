@@ -25,15 +25,13 @@ if [ "$xvfbProcessCount" -ge 2 ]; then
 	exit 1;
 fi;
 
-containerId=$(docker run \
-	--rm \
-	--detach \
-	-it \
+containerId=$(sudo docker run \
+	-itd \
 	-e DEBUG_PORT=$DEBUG_PORT \
 	-e VNC_PORT=$VNC_PORT \
 	-e DISPLAY=$DISPLAY \
 	--network=host \
-	chrome-gui-hyperaccs)
+	chrome-gui)
 
 if [ -z $containerId ]; then
 	echo "Could not get containerId";

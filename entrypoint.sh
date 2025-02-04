@@ -19,5 +19,5 @@ google-chrome --no-sandbox \
 	--disable-dev-shm-usage \
 	--disable-gpu \
 	--remote-debugging-port=$DEBUG_PORT \
-	--remote-debugging-address=$0.0.0.0 \
+	--remote-debugging-address=0.0.0.0 \
 	--no-default-browser-check
